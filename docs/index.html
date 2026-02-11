@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WPS Execution Platform for D365 F&O — Product Brief</title>
+  <meta name="description" content="Product brief for WPS Execution Platform (extension for Microsoft Dynamics 365 Finance & Operations) covering shop-floor and field execution." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <div class="container">
+      <div class="kicker">Product Brief</div>
+      <h1 class="title">WPS FloorOps</h1>
+
+      <div class="meta-row">
+        <div class="meta-pill"><span class="meta-label">Version</span> 3.6</div>
+        <div class="meta-pill"><span class="meta-label">Date</span> 10 Feb 2026</div>
+        <div class="meta-pill"><span class="meta-label">Prepared by</span>Sandeep K</div>
+      </div>
+
+      <details class="toc" open>
+        <summary>Contents</summary>
+        <nav aria-label="Table of contents">
+          <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#gaps">Operational gaps addressed</a></li>
+            <li><a href="#at-a-glance">Platform at a glance</a></li>
+            <li><a href="#components">Platform components</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#workflows">Key workflows and screens</a></li>
+            <li><a href="#capability-summary">Capability summary (text-only)</a></li>
+            <li><a href="#integration">Integration with D365 F&amp;O</a></li>
+            <li><a href="#security">Security and governance</a></li>
+            <li><a href="#outcomes">Expected operational outcomes</a></li>
+            <li><a href="#targets">Target deployments</a></li>
+          </ol>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+
+    <section id="overview" class="card">
+      <h2>Overview</h2>
+      <p>
+        The WPS Execution Platform is an extension to Microsoft Dynamics 365 Finance and Operations (D365 F&amp;O)
+        for managing shop-floor execution and field execution. It complements D365 F&amp;O by providing operational
+        workflows, mobile data capture, and traceability across production, quality, dispatch readiness, installation,
+        commissioning, and after-sales service activities, while keeping D365 F&amp;O as the system of record.
+      </p>
+    </section>
+
+    <section id="scope" class="card">
+      <h2>Scope</h2>
+      <ul>
+        <li>Shop-floor execution for production orders, routes, and operations.</li>
+        <li>Quality inspections and approvals across manufacturing and field stages.</li>
+        <li>Dispatch readiness checks and evidence capture.</li>
+        <li>Field execution for installation and commissioning, including digital customer sign-off.</li>
+        <li>Issue and exception management with escalation workflows.</li>
+        <li>Planner and service visibility for factory and site jobs (SLA and milestone tracking).</li>
+      </ul>
+
+      <h3>Out of scope / boundaries</h3>
+      <ul>
+        <li>Does not replace D365 F&amp;O planning, costing, or financial posting logic; these remain in D365 F&amp;O.</li>
+        <li>Relies on masters and core transactions maintained in D365 F&amp;O (e.g., items, production orders, projects, assets).</li>
+      </ul>
+    </section>
+
+    <section id="gaps" class="card">
+      <h2>Operational gaps addressed</h2>
+      <p>
+        In many manufacturing environments using ERP systems, execution data is captured across spreadsheets, paper checklists,
+        and isolated tools. Common gaps include limited shop-floor visibility, manual or fragmented quality tracking, offline commissioning
+        records, and scattered service history. These gaps typically lead to delays, rework, and increased audit and compliance effort.
+      </p>
+    </section>
+
+    <section id="at-a-glance" class="card">
+      <h2>Platform at a glance</h2>
+      <p>
+        The platform provides a unified execution layer aligned to D365 F&amp;O entities. It supports controlled status transitions,
+        role-based dashboards, standardized inspection templates, and mobile technician workflows. Execution events and evidence are captured
+        with a consistent audit trail and are associated to production orders, serial numbers, and assets as applicable.
+      </p>
+    </section>
+
+    <section id="components" class="card">
+      <h2>Platform components</h2>
+
+      <!-- Desktop table -->
+      <div class="table-wrap">
+        <table class="table" aria-label="Platform components">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>D365 F&amp;O (system of record)</td>
+              <td>Holds master data and core transactions (production, sales/projects, assets, finance).</td>
+            </tr>
+            <tr>
+              <td>Web management console</td>
+              <td>Planner, supervisor, QA, and service views; dashboards, activity feeds, approvals, and audit trails.</td>
+            </tr>
+            <tr>
+              <td>Mobile technician app (Android)</td>
+              <td>Guided checklists, operational start/stop/hold, and capture of measurements and media evidence at shop-floor or site.</td>
+            </tr>
+            <tr>
+              <td>Integration services (secure APIs)</td>
+              <td>Data exchange with D365 F&amp;O and controlled synchronization of execution events, statuses, and references.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile stacked rows (shown via CSS) -->
+      <div class="stacked-rows" aria-label="Platform components (mobile)">
+        <div class="row-card">
+          <div class="row-label">Component</div>
+          <div class="row-value">D365 F&amp;O (system of record)</div>
+          <div class="row-label">Purpose</div>
+          <div class="row-value">Holds master data and core transactions (production, sales/projects, assets, finance).</div>
+        </div>
+
+        <div class="row-card">
+          <div class="row-label">Component</div>
+          <div class="row-value">Web management console</div>
+          <div class="row-label">Purpose</div>
+          <div class="row-value">Planner, supervisor, QA, and service views; dashboards, activity feeds, approvals, and audit trails.</div>
+        </div>
+
+        <div class="row-card">
+          <div class="row-label">Component</div>
+          <div class="row-value">Mobile technician app (Android)</div>
+          <div class="row-label">Purpose</div>
+          <div class="row-value">Guided checklists, operational start/stop/hold, and capture of measurements and media evidence at shop-floor or site.</div>
+        </div>
+
+        <div class="row-card">
+          <div class="row-label">Component</div>
+          <div class="row-value">Integration services (secure APIs)</div>
+          <div class="row-label">Purpose</div>
+          <div class="row-value">Data exchange with D365 F&amp;O and controlled synchronization of execution events, statuses, and references.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="card">
+      <h2>Architecture</h2>
+      <p>
+        D365 F&amp;O remains the authoritative source for masters and financial records. The execution platform captures operational events,
+        inspection outcomes, and evidence references and associates them back to relevant D365 F&amp;O records via secure APIs.
+      </p>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">FIG-01</div>
+          <div class="plate-title">Architecture diagram (placeholder)</div>
+        </header>
+
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Architecture%20diagram-Hori.png" alt="Architecture diagram showing D365 F&amp;O, secure APIs, and web/mobile layers" />
+          </div>
+
+          <div class="plate-notes">
+            <div class="note">
+              <div class="note-label"></div>
+              <div class="note-value">High-level architecture showing D365 F&O as the system of record, the execution platform (web console and mobile app), and secure API-based integration.</div>
+            </div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>System boundary: D365 F&O (system of record) vs execution layer.</li>
+                <li>Integration path: secure APIs and data exchange touchpoints.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="workflows" class="card">
+      <h2>Key workflows and screens</h2>
+      <p class="muted">
+        Use annotated screenshots (1 to 2 callouts per screen) to demonstrate how execution is performed and recorded.
+        On mobile, prefer callouts as a short list rather than overlay-heavy annotations.
+      </p>
+
+      
+      <!-- Screenshot plates -->
+      
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-01</div>
+          <div class="plate-title">Planner and management console</div>
+        </header>
+        <div class="plate-body">
+  
+            <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Planner and management console.png" alt="Planner and management console screenshot" />
+          </div>
+
+          <div class="plate-notes">
+            <div class="note">
+              <div class="note-label"></div>
+              <div class="note-value">Planner dashboard showing current production and field job worklists with execution status and pending actions.</div>
+            </div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Worklist filters (plant/site, date range, status).</li>
+                <li>Pending actions / approvals / exceptions queue.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-02</div>
+          <div class="plate-title">Route and operation control</div>
+        </header>
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Route and operation control.png" alt="Route and operation control screenshot" />
+          </div>
+          <div class="plate-notes">
+            <div class="note"><div class="note-label"></div><div class="note-value">Operation control screen showing an operation status change (hold/reassign) recorded with reason code and audit history.</div></div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Hold / reassign action control.</li>
+                <li>Reason code + remarks + history log.</li>
+              </ul>
+            </div>
+        </div>
+      </article>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-03</div>
+          <div class="plate-title">Real-time execution visibility</div>
+        </header>
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Real-time execution visibility.png" alt="Real-time execution visibility screenshot" />
+          </div>
+          <div class="plate-notes">
+            <div class="note"><div class="note-label"></div><div class="note-value">WIP dashboard showing stage-wise counts and items delayed beyond configured thresholds.</div></div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Stage-wise WIP summary / drill-down link.</li>
+                <li>Delay/bottleneck indicator (threshold-based).</li>
+              </ul>
+            </div>
+        </div>
+      </article>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-04</div>
+          <div class="plate-title">Quality and inspection management</div>
+        </header>
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Quality and inspection management.png" alt="Quality and inspection management screenshot" />
+          </div>
+          <div class="plate-notes">
+            <div class="note"><div class="note-label"></div><div class="note-value">Inspection form capturing parameter results, pass/fail status, remarks, and linked evidence attachments.</div></div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Parameter entry with validation / tolerance check.</li>
+                <li>Evidence section (photo/video/file attachments)</li>
+              </ul>
+            </div>
+        </div>
+      </article>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-05</div>
+          <div class="plate-title">Installation and commissioning</div>
+        </header>
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Installation and commissioning.png" alt="Installation and commissioning screenshot" />
+          </div>
+          <div class="plate-notes">
+            <div class="note"><div class="note-label"></div><div class="note-value">Commissioning checklist for a site job, recording completion status and customer acceptance/sign-off.</div></div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Checklist step completion + acceptance criteria.</li>
+                <li>Customer sign-off section (name, timestamp, signature).</li>
+              </ul>
+            </div>
+        </div>
+      </article>
+
+      <article class="plate">
+        <header class="plate-head">
+          <div class="plate-id">SCR-06</div>
+          <div class="plate-title">Issue and exception management</div>
+        </header>
+        <div class="plate-body">
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Issue and exception management.png" alt="Issue and exception management screenshot" />
+          </div>
+          <div class="plate-notes">
+            <div class="note"><div class="note-label"></div><div class="note-value">Issue record linked to a factory/site activity showing severity, status, assigned owner, and escalation/approval trail.</div></div>
+            <div class="note">
+              <div class="note-label"></div>
+              <ul class="compact">
+                <li>Severity + status + owner/assignee.</li>
+                <li>Escalation / approval trail (who/when/decision).</li>
+              </ul>
+            </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="capability-summary" class="card">
+      <h2>Capability summary (text-only)</h2>
+      <p class="muted">
+        This section retains a text-only summary of capabilities for contexts where screenshots are not shared
+        (e.g., procurement, security review).
+      </p>
+
+      <h3>Quality traceability and approvals</h3>
+      <ul>
+        <li>Linkage of quality records to production order, serial number, and asset identifiers as applicable.</li>
+        <li>Approval workflows for deviations and quality releases.</li>
+        <li>Audit-ready logs with user, timestamp, and reason-code history.</li>
+      </ul>
+
+      <h3>Technician and field execution (mobile)</h3>
+      <ul>
+        <li>Android application for technicians and inspectors.</li>
+        <li>Guided checklists aligned to operations and inspection plans.</li>
+        <li>Start / stop / hold controls for task execution with reason capture.</li>
+        <li>On-device media capture for documentation and evidence.</li>
+      </ul>
+
+      <h3>Planner and service visibility</h3>
+      <ul>
+        <li>Unified view of factory jobs and site jobs for planners and service coordinators.</li>
+        <li>SLA and milestone tracking for commissioning and service activities.</li>
+      </ul>
+    </section>
+
+    <section id="integration" class="card">
+      <h2>Integration with D365 F&amp;O</h2>
+      <p>
+        The platform exchanges data with D365 F&amp;O using secure APIs. D365 F&amp;O remains the system of record for masters and finance.
+        The execution platform captures operational events, inspection outcomes, and evidence references and associates them back to relevant
+        D365 F&amp;O records.
+      </p>
+
+      <h3>Primary touchpoints</h3>
+      <ul>
+        <li>Production orders and related routes/operations.</li>
+        <li>Sales orders and/or project records driving manufacturing and field work.</li>
+        <li>Assets and warranty references for installed equipment.</li>
+        <li>Finance-ready execution outcomes to support downstream posting in D365 F&amp;O (based on customer configuration).</li>
+      </ul>
+    </section>
+
+    <section id="security" class="card">
+      <h2>Security and governance</h2>
+      <ul>
+        <li>Role-based access control aligned to organizational roles (planner, supervisor, QA, technician, service coordinator, administrator).</li>
+        <li>End-to-end audit trails for status changes, approvals, and evidence capture.</li>
+        <li>Secure storage for media evidence with controlled access and retention policies (deployment-dependent).</li>
+        <li>Reason codes and mandatory remarks for holds, reassignments, and deviations to improve accountability.</li>
+      </ul>
+    </section>
+
+    <section id="outcomes" class="card">
+      <h2>Expected operational outcomes</h2>
+      <p>
+        Typical outcomes from implementing structured execution and traceability include improved schedule adherence, reduced rework from early detection
+        of quality issues, faster closure of commissioning activities, and simpler preparation for internal and external audits. Actual results depend on
+        baseline process maturity, adoption, and configuration.
+      </p>
+    </section>
+
+    <section id="targets" class="card">
+      <h2>Target deployments</h2>
+
+      <h3>Ideal customer profile</h3>
+      <ul>
+        <li>Manufacturers running D365 F&amp;O who require controlled execution tracking beyond standard ERP transactions.</li>
+        <li>Make-to-Order (MTO) and Engineer-to-Order (ETO) environments with complex routing, inspections, and site work.</li>
+        <li>Capital equipment and project-driven industries where factory and field execution must be traceable to serial and asset records.</li>
+      </ul>
+
+      <h3>Typical implementation considerations</h3>
+      <ul>
+        <li>Define execution stages, status transitions, reason codes, and approval workflows required by the organization.</li>
+        <li>Configure inspection templates and parameter sets for manufacturing and commissioning steps.</li>
+        <li>Map D365 F&amp;O entities and identifiers to ensure consistent linkage (production order, serial, project, asset).</li>
+        <li>Set up user roles and access controls for factory and field users.</li>
+        <li>Establish policies for media evidence storage, retention, and access.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div class="muted">
+        Note: Keep captions factual. Redact customer/user names, IDs, site addresses, and pricing before sharing externally.
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
+
+
+
