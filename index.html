@@ -14,24 +14,18 @@
   <header class="masthead">
     <div class="container">
       <div class="kicker">Product Brief</div>
-      <h1 class="title">WPS Execution Platform for Microsoft Dynamics 365 Finance and Operations (D365 F&amp;O)</h1>
+      <h1 class="title">WPS FloorOps</h1>
 
       <div class="meta-row">
-        <div class="meta-pill"><span class="meta-label">Version</span> 1.2</div>
+        <div class="meta-pill"><span class="meta-label">Version</span> 3.6</div>
         <div class="meta-pill"><span class="meta-label">Date</span> 10 Feb 2026</div>
-        <div class="meta-pill"><span class="meta-label">Prepared by</span> WPS Product Team</div>
-      </div>
-
-      <div class="actions">
-        <button class="btn" type="button" onclick="window.print()">Print / Save as PDF</button>
-        <a class="btn btn-secondary" href="#appendix">Jump to Appendix</a>
+        <div class="meta-pill"><span class="meta-label">Prepared by</span>Sandeep K</div>
       </div>
 
       <details class="toc" open>
         <summary>Contents</summary>
         <nav aria-label="Table of contents">
           <ol>
-            <li><a href="#how-to-use">How to use this document</a></li>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#scope">Scope</a></li>
             <li><a href="#gaps">Operational gaps addressed</a></li>
@@ -44,7 +38,6 @@
             <li><a href="#security">Security and governance</a></li>
             <li><a href="#outcomes">Expected operational outcomes</a></li>
             <li><a href="#targets">Target deployments</a></li>
-            <li><a href="#appendix">Appendix A: Screenshot inventory</a></li>
           </ol>
         </nav>
       </details>
@@ -52,15 +45,6 @@
   </header>
 
   <main id="content" class="container">
-
-    <section id="how-to-use" class="card">
-      <h2>How to use this document</h2>
-      <p>
-        This brief is written to be read without screenshots. Where visuals improve clarity, the document includes
-        placeholders for annotated screenshots and captions. Teams can insert current UI captures and add factual callouts
-        without changing the core narrative.
-      </p>
-    </section>
 
     <section id="overview" class="card">
       <h2>Overview</h2>
@@ -187,25 +171,20 @@
         </header>
 
         <div class="plate-body">
-          <div class="figure-frame" role="img" aria-label="Architecture diagram placeholder">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Insert diagram here<br/>
-                <span class="muted">Suggested: D365 F&amp;O → Secure APIs → Web Console + Mobile App</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Architecture%20diagram-Hori.png" alt="Architecture diagram showing D365 F&amp;O, secure APIs, and web/mobile layers" />
           </div>
 
           <div class="plate-notes">
             <div class="note">
-              <div class="note-label">Caption</div>
-              <div class="note-value">[Add factual caption - what the diagram represents]</div>
+              <div class="note-label"></div>
+              <div class="note-value">High-level architecture showing D365 F&O as the system of record, the execution platform (web console and mobile app), and secure API-based integration.</div>
             </div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>Callout 1: [System of record boundary]</li>
-                <li>Callout 2: [Integration / synchronization touchpoints]</li>
+                <li>System boundary: D365 F&O (system of record) vs execution layer.</li>
+                <li>Integration path: secure APIs and data exchange touchpoints.</li>
               </ul>
             </div>
           </div>
@@ -229,29 +208,22 @@
           <div class="plate-title">Planner and management console</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Planner dashboard / worklist<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-01-planner-dashboard.png</span>
-              </div>
-            </div>
+  
+            <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Planner and management console.png" alt="Planner and management console screenshot" />
           </div>
+
           <div class="plate-notes">
             <div class="note">
-              <div class="note-label">Caption</div>
-              <div class="note-value">[Add factual caption - what the screen shows]</div>
+              <div class="note-label"></div>
+              <div class="note-value">Planner dashboard showing current production and field job worklists with execution status and pending actions.</div>
             </div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Activity feed / approval queue / worklist]</li>
-                <li>(2) [Drill-down into production order / operation]</li>
+                <li>Worklist filters (plant/site, date range, status).</li>
+                <li>Pending actions / approvals / exceptions queue.</li>
               </ul>
-            </div>
-            <div class="note">
-              <div class="note-label">Redaction notes</div>
-              <div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div>
             </div>
           </div>
         </div>
@@ -263,25 +235,18 @@
           <div class="plate-title">Route and operation control</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Operation control (reassign/hold + reason)<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-02-operation-control.png</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Route and operation control.png" alt="Route and operation control screenshot" />
           </div>
           <div class="plate-notes">
-            <div class="note"><div class="note-label">Caption</div><div class="note-value">[Add factual caption - what the screen shows]</div></div>
+            <div class="note"><div class="note-label"></div><div class="note-value">Operation control screen showing an operation status change (hold/reassign) recorded with reason code and audit history.</div></div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Hold / reassign action]</li>
-                <li>(2) [Mandatory reason code + history]</li>
+                <li>Hold / reassign action control.</li>
+                <li>Reason code + remarks + history log.</li>
               </ul>
             </div>
-            <div class="note"><div class="note-label">Redaction notes</div><div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div></div>
-          </div>
         </div>
       </article>
 
@@ -291,25 +256,18 @@
           <div class="plate-title">Real-time execution visibility</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Live WIP dashboard / bottleneck view<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-03-wip-dashboard.png</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Real-time execution visibility.png" alt="Real-time execution visibility screenshot" />
           </div>
           <div class="plate-notes">
-            <div class="note"><div class="note-label">Caption</div><div class="note-value">[Add factual caption - what the screen shows]</div></div>
+            <div class="note"><div class="note-label"></div><div class="note-value">WIP dashboard showing stage-wise counts and items delayed beyond configured thresholds.</div></div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Stage-based tracking]</li>
-                <li>(2) [Bottleneck alert / threshold indicator]</li>
+                <li>Stage-wise WIP summary / drill-down link.</li>
+                <li>Delay/bottleneck indicator (threshold-based).</li>
               </ul>
             </div>
-            <div class="note"><div class="note-label">Redaction notes</div><div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div></div>
-          </div>
         </div>
       </article>
 
@@ -319,25 +277,18 @@
           <div class="plate-title">Quality and inspection management</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Inspection form with parameters + media evidence<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-04-inspection-form.png</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Quality and inspection management.png" alt="Quality and inspection management screenshot" />
           </div>
           <div class="plate-notes">
-            <div class="note"><div class="note-label">Caption</div><div class="note-value">[Add factual caption - what the screen shows]</div></div>
+            <div class="note"><div class="note-label"></div><div class="note-value">Inspection form capturing parameter results, pass/fail status, remarks, and linked evidence attachments.</div></div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Parameter validation / measurement capture]</li>
-                <li>(2) [Photo/video evidence attachment]</li>
+                <li>Parameter entry with validation / tolerance check.</li>
+                <li>Evidence section (photo/video/file attachments)</li>
               </ul>
             </div>
-            <div class="note"><div class="note-label">Redaction notes</div><div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div></div>
-          </div>
         </div>
       </article>
 
@@ -347,25 +298,18 @@
           <div class="plate-title">Installation and commissioning</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Commissioning checklist + customer sign-off<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-05-commissioning-signoff.png</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Installation and commissioning.png" alt="Installation and commissioning screenshot" />
           </div>
           <div class="plate-notes">
-            <div class="note"><div class="note-label">Caption</div><div class="note-value">[Add factual caption - what the screen shows]</div></div>
+            <div class="note"><div class="note-label"></div><div class="note-value">Commissioning checklist for a site job, recording completion status and customer acceptance/sign-off.</div></div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Checklist steps / acceptance criteria]</li>
-                <li>(2) [Digital sign-off capture]</li>
+                <li>Checklist step completion + acceptance criteria.</li>
+                <li>Customer sign-off section (name, timestamp, signature).</li>
               </ul>
             </div>
-            <div class="note"><div class="note-label">Redaction notes</div><div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div></div>
-          </div>
         </div>
       </article>
 
@@ -375,25 +319,18 @@
           <div class="plate-title">Issue and exception management</div>
         </header>
         <div class="plate-body">
-          <div class="shot-frame">
-            <div class="frame-inner">
-              <div class="frame-text">
-                Screenshot placeholder: Deviation/issue ticket with severity and escalation<br/>
-                <span class="muted">Insert image: ./assets/screens/scr-06-issue-ticket.png</span>
-              </div>
-            </div>
+          <div class="figure-frame has-image">
+            <img class="frame-image" src="./images/Issue and exception management.png" alt="Issue and exception management screenshot" />
           </div>
           <div class="plate-notes">
-            <div class="note"><div class="note-label">Caption</div><div class="note-value">[Add factual caption - what the screen shows]</div></div>
+            <div class="note"><div class="note-label"></div><div class="note-value">Issue record linked to a factory/site activity showing severity, status, assigned owner, and escalation/approval trail.</div></div>
             <div class="note">
-              <div class="note-label">Suggested callouts</div>
+              <div class="note-label"></div>
               <ul class="compact">
-                <li>(1) [Severity classification]</li>
-                <li>(2) [Escalation / approval workflow state]</li>
+                <li>Severity + status + owner/assignee.</li>
+                <li>Escalation / approval trail (who/when/decision).</li>
               </ul>
             </div>
-            <div class="note"><div class="note-label">Redaction notes</div><div class="note-value">[Remove customer/user names, IDs, pricing, or sensitive references]</div></div>
-          </div>
         </div>
       </article>
     </section>
@@ -483,80 +420,6 @@
       </ul>
     </section>
 
-    <section id="appendix" class="card">
-      <h2>Appendix A: Screenshot inventory (placeholders)</h2>
-      <p class="muted">
-        Use this appendix when evaluators request additional detail. Keep captions factual and include only the minimum callouts needed.
-      </p>
-
-      <div class="table-wrap">
-        <table class="table" aria-label="Screenshot inventory">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Screen / artifact</th>
-              <th>Purpose</th>
-              <th>Insert / notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>SCR-01</td><td>Planner dashboard / worklist</td><td>Operational visibility and approvals</td><td>Insert screenshot; add 1–2 callouts</td></tr>
-            <tr><td>SCR-02</td><td>Operation control (reassign/hold + reason)</td><td>Governed execution control</td><td>Insert screenshot; show reason code</td></tr>
-            <tr><td>SCR-03</td><td>Live WIP / bottleneck view</td><td>Real-time tracking</td><td>Insert screenshot; show drill-down</td></tr>
-            <tr><td>SCR-04</td><td>Inspection form + evidence</td><td>Quality capture and traceability</td><td>Insert screenshot; show parameter validation</td></tr>
-            <tr><td>SCR-05</td><td>Commissioning checklist + sign-off</td><td>Field execution and acceptance</td><td>Insert screenshot; show sign-off capture</td></tr>
-            <tr><td>SCR-06</td><td>Issue/deviation ticket</td><td>Exception management</td><td>Insert screenshot; show severity/escalation</td></tr>
-            <tr><td>FIG-01</td><td>Architecture diagram</td><td>System boundary and interfaces</td><td>Insert diagram; show D365 as system of record</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="stacked-rows" aria-label="Screenshot inventory (mobile)">
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-01</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Planner dashboard / worklist</div>
-          <div class="row-label">Purpose</div><div class="row-value">Operational visibility and approvals</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; add 1–2 callouts</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-02</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Operation control (reassign/hold + reason)</div>
-          <div class="row-label">Purpose</div><div class="row-value">Governed execution control</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; show reason code</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-03</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Live WIP / bottleneck view</div>
-          <div class="row-label">Purpose</div><div class="row-value">Real-time tracking</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; show drill-down</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-04</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Inspection form + evidence</div>
-          <div class="row-label">Purpose</div><div class="row-value">Quality capture and traceability</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; show parameter validation</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-05</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Commissioning checklist + sign-off</div>
-          <div class="row-label">Purpose</div><div class="row-value">Field execution and acceptance</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; show sign-off capture</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">SCR-06</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Issue/deviation ticket</div>
-          <div class="row-label">Purpose</div><div class="row-value">Exception management</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert screenshot; show severity/escalation</div>
-        </div>
-        <div class="row-card">
-          <div class="row-label">ID</div><div class="row-value">FIG-01</div>
-          <div class="row-label">Screen / artifact</div><div class="row-value">Architecture diagram</div>
-          <div class="row-label">Purpose</div><div class="row-value">System boundary and interfaces</div>
-          <div class="row-label">Insert / notes</div><div class="row-value">Insert diagram; show D365 as system of record</div>
-        </div>
-      </div>
-    </section>
-
     <footer class="footer">
       <div class="muted">
         Note: Keep captions factual. Redact customer/user names, IDs, site addresses, and pricing before sharing externally.
@@ -566,3 +429,6 @@
   </main>
 </body>
 </html>
+
+
+
